@@ -1,14 +1,25 @@
 import Head from 'next/head'
-import type { NextPage } from 'next'
+import type { GetServerSideProps, NextPage } from 'next'
 
-import { Box, Divider, Center, VStack } from '@chakra-ui/react'
+import { Box, Divider, Center } from '@chakra-ui/react'
 
 import { Header } from '../components/Header'
 import { HomeBanner } from '../components/Home/Banner'
 import { HomeList } from '../components/Home/List'
-import { SwiperLabel } from '../components/Home/Swiper/Label'
+import { HomeSwiper } from '../components/Home/Swiper'
 
-const Home: NextPage = () => {
+interface HomeProps {
+  data: {
+    continents: string[],
+    exerts: string[],
+    urls: string[]
+  }
+}
+
+const Home: NextPage<HomeProps> = ({data}) => {
+
+  console.log(data)
+
   return (
     <>
       <Head>
@@ -27,16 +38,32 @@ const Home: NextPage = () => {
           <Divider w="16" borderColor="gray.700"/>
         </Center>
 
-        <Center py="6">
-          <VStack>
-            <SwiperLabel> Vamos nessa? </SwiperLabel> 
-           <SwiperLabel> Então escolha seu continente </SwiperLabel>
-          </VStack>
-        </Center>
+        <HomeSwiper props={data}/>
 
       </Box>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+
+  const response = await fetch("http://localhost:3333/continents")
+  const exertResponse = await fetch("http://localhost:3333/exerts")
+  const urlResponse = await fetch("http://localhost:3333/urls")
+
+  const continents = await response.json()
+  const exerts = await exertResponse.json()
+  const urls = await urlResponse.json()
+
+  const data = {
+    continents,
+    exerts,
+    urls
+  }
+
+  return {
+    props: {data}
+  }
 }
 
 export default Home
