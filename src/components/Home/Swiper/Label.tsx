@@ -1,11 +1,7 @@
 import React from 'react'
 import { Text } from '@chakra-ui/react'
 
-interface SwiperLabelProps {
-    children: React.ReactNode
-}
-
-export const SwiperLabel = ({children}: SwiperLabelProps) => {
+export const SwiperLabel: React.FC = ({children}) => {
     return (
         <Text
           fontWeight="medium"
