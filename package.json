@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "server": "json-server --watch api.json --port 3333",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -16,7 +17,9 @@
     "next": "12.0.7",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-icons": "^4.3.1"
+    "react-icons": "^4.3.1",
+    "sass": "^1.45.0",
+    "swiper": "^7.3.3"
   },
   "devDependencies": {
     "@types/node": "16.11.13",
