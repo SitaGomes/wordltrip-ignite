@@ -2,20 +2,25 @@ import React from 'react'
 
 import { ListItems } from './ListItems'
 
-import { Flex, HStack } from '@chakra-ui/react'
+import { Center, HStack } from '@chakra-ui/react'
 
 export const HomeList = () => {
     return (
-        <Flex p="10" >
+      <Center>
+        
+        <Center py="10" px={["0", "4", "4"]} w={["275px", "1240px"]} justify="center">
           
-          <HStack flexWrap="wrap" w="100%" justify="space-around" gap="4">
-            <ListItems> vida noturna </ListItems>
-            <ListItems> praia </ListItems>
-            <ListItems> moderno </ListItems>
-            <ListItems> clássico </ListItems>
-            <ListItems> e mais.. </ListItems>
+          <HStack flexWrap="wrap" w="100%" justify={["space-around", "space-between"]} gap="4" >
+            <ListItems src="/list-icons/building.png"> vida noturna </ListItems>
+            <ListItems src="/list-icons/cocktail.png"> praia </ListItems>
+            <ListItems src="/list-icons/earth.png"> moderno </ListItems>
+            <ListItems src="/list-icons/museum.png"> clássico </ListItems>
+            <ListItems src="/list-icons/surf.png"> e mais.. </ListItems>
           </HStack>
             
-        </Flex>
+        </Center>
+
+      </Center>
     )
+
 }
