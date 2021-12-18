@@ -5,7 +5,7 @@ export const Header: React.FC = () => {
     return (
         <Heading>
             <Flex justify="center" w="100%" p="4">
-                <Image src="/logo.png" />
+                <Image src="/assets/logo.png" />
             </Flex>
         </Heading>
     )
