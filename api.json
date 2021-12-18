@@ -1,5 +1,27 @@
 {
     "continents": ["Europa", "Ásia", "África", "Oceania", "América do norte", "América do sul"],
-    "exerts": ["O continente mais antigo.", "O maior continente", "O continente com mais potêncial", "O menor continente", "O subcontinente mais rico", "O subcontinente mais bonito"],
-    "urls": ["europe.png", "asia.jpg", "africa.jpg", "oceania.jpg", "north.jpg", "south.jpg"]
+    "ids": ["europe", "asia", "africa", "oceania", "north", "south"],
+    "exerts": ["O continente mais antigo.", "O maior continente", "O continente com maior potêncial", "O menor continente", "O subcontinente mais rico", "O subcontinente mais bonito"],
+    "urls": ["europe.jpg", "asia.jpg", "africa.jpg", "oceania.jpg", "north.jpg", "south.jpg"],
+    "europe": {
+        "cities": [
+            {"name": "paris", "country": "França", "url": "paris.jpg"},
+            {"name": "london", "country": "Reino unido", "url": "london.jpg"},
+            {"name": "roma", "country": "Itália", "url": "roma.jpg"},
+            {"name": "madrid", "country": "Espanha", "url": "madrid.jpg"},
+            {"name": "amsterdãm", "country": "Holanda", "url": "amsterdam.jpg"},
+            {"name": "veneza", "country": "Itália", "url": "veneza.jpg"}
+
+        ],
+        "info": {
+            "city_number": "50",
+            "languagues": "60",
+            "plus_100": "27"
+        }
+    },
+    "asia": {
+        "cities": [
+            {}
+        ]
+    }
 }
