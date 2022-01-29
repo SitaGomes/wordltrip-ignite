@@ -1,0 +1,5 @@
+{
+    "continents": ["Europa", "Ásia", "África", "Oceania", "América do norte", "América do sul"],
+    "exerts": ["O continente mais antigo.", "O maior continente", "O continente com mais potêncial", "O menor continente", "O subcontinente mais rico", "O subcontinente mais bonito"],
+    "urls": ["europe.png", "asia.jpg", "africa.jpg", "oceania.jpg", "north.jpg", "south.jpg"]
+}
