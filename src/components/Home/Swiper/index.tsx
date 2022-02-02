@@ -45,7 +45,7 @@ export const HomeSwiper: React.FC<HomeSwiperProps> = ({props}) => {
                     <SwiperSlide key={continent}>
 
                         <Link href={`/continents/${props.ids[index]}`}>
-                            <SwiperItem url={`/contries/${props.urls[index]}`} exert={props.exerts[index]} > 
+                            <SwiperItem url={`/contries/${props.urls[index]}`} exert={props.exerts[index]} >
                                 {continent}
                             </SwiperItem>
                         </Link>
