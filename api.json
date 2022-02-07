@@ -4,6 +4,7 @@
     "exerts": ["O continente mais antigo.", "O maior continente", "O continente com maior potêncial", "O menor continente", "O subcontinente mais rico", "O subcontinente mais bonito"],
     "urls": ["europe.jpg", "asia.jpg", "africa.jpg", "oceania.jpg", "north.jpg", "south.jpg"],
     "europe": {
+        "name": "Europa",
         "cities": [
             {"name": "paris", "country": "França", "url": "paris.jpg"},
             {"name": "london", "country": "Reino unido", "url": "london.jpg"},
@@ -11,12 +12,12 @@
             {"name": "madrid", "country": "Espanha", "url": "madrid.jpg"},
             {"name": "amsterdãm", "country": "Holanda", "url": "amsterdam.jpg"},
             {"name": "veneza", "country": "Itália", "url": "veneza.jpg"}
-
         ],
         "info": {
             "city_number": "50",
             "languagues": "60",
-            "plus_100": "27"
+            "plus_100": "27",
+            "exert": "A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste"
         }
     },
     "asia": {

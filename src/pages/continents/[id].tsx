@@ -3,13 +3,14 @@ import Link from 'next/link'
 import Head from 'next/head'
 import { GetServerSideProps, NextPage } from 'next/types'
 
-import {IoIosArrowBack} from "react-icons/io"
 
 import { Box, Button, Center, Flex, Icon, Text } from '@chakra-ui/react'
-import { Header } from '../../components/Header'
+import { HeaderBar } from '../../components/Continents/Header'
+import { Banner } from '../../components/Continents/Banner'
 
 interface ContinentPageProps {
   data: {
+    name: string;
     cities: [
       {
         name: string,
@@ -19,7 +20,8 @@ interface ContinentPageProps {
     ],
     info: {
       city_number: string, 
-      laguagues: string, 
+      laguagues: string,
+      exert: string, 
       plus_100: string
     }
   },
@@ -37,46 +39,30 @@ const ContinentPage: NextPage<ContinentPageProps> = ({data, id}) => {
     
       <Head>
         <title>
-          {id.charAt(0).toUpperCase() + id.slice(1)} | WordlTrip
+          {data.name} | WordlTrip
         </title>
       </Head>
 
       <Box>
         
-        <Flex justify="center">
+        <HeaderBar />
 
-          <Flex w={["100%", "1160px"]}>
-            <Button variant='link' justifyContent="flex-start">
-              <Link href="/">
-                <Icon as={IoIosArrowBack} fontSize="lg" />
-              </Link>
-            </Button>
-            
-            <Center w="100%"> 
-              <Header />
-            </Center>
-          </Flex>
+        <Banner id={id} countryName={data.name}/>
 
-        </Flex>
+        {/* Content */}
+        <Flex w={["100%", "100%", "100%", "1160px"]} margin="auto">
 
-        <Flex
-          bgImage={`/contries/${id}.jpg`}
-          bgPos="center"
-          bgRepeat="no-repeat"
-          bgSize="cover"
-          justify="center"
-        >
-          <Flex w={["100%", "1160px"]} h={["150px", "500px"]} align={["center", "flex-end"]} justify={["center", "flex-start"]}>
-            
-            <Text
-              align={["center", "left"]}
-              color="gray.50"
-              py={["0", "14"]}
-              fontSize={["3xl", "4xl"]}
-              fontWeight="semibold"
-            >
-              {id.charAt(0).toUpperCase() + id.slice(1)}
-            </Text>
+          <Flex flexWrap={["wrap", "nowrap"]} m="4" mt="6">
+            <Box fontSize="sm">{data.info.exert}</Box>
+
+            <Box mt="4">
+
+              <Flex flexDir="column" align={["left", "center"]}>
+                <Text fontWeight="semibold" color="brand.500" fontSize="2xl">{data.info.city_number}</Text>
+                <Text>países</Text>
+              </Flex>
+              
+            </Box>
 
           </Flex>
 
