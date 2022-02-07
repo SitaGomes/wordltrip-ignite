@@ -12,13 +12,12 @@ interface HomeProps {
   data: {
     continents: string[],
     exerts: string[],
-    urls: string[]
+    urls: string[],
+    ids: string[]
   }
 }
 
 const Home: NextPage<HomeProps> = ({data}) => {
-
-  console.log(data)
 
   return (
     <>
@@ -40,6 +39,8 @@ const Home: NextPage<HomeProps> = ({data}) => {
 
         <HomeSwiper props={data}/>
 
+        <Box m="8" />
+
       </Box>
     </>
   )
@@ -50,15 +51,18 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const response = await fetch("http://localhost:3333/continents")
   const exertResponse = await fetch("http://localhost:3333/exerts")
   const urlResponse = await fetch("http://localhost:3333/urls")
+  const idsResponse = await fetch("http://localhost:3333/ids")
 
   const continents = await response.json()
   const exerts = await exertResponse.json()
   const urls = await urlResponse.json()
+  const ids = await idsResponse.json()
 
   const data = {
     continents,
     exerts,
-    urls
+    urls,
+    ids
   }
 
   return {

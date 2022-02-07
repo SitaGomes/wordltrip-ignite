@@ -1,27 +1,29 @@
 import React from 'react'
 
-import { Box, Center, VStack, Image } from '@chakra-ui/react'
+import { Center, Link, VStack } from '@chakra-ui/react'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import {Navigation} from "swiper"
+import SwiperCore, {Navigation, Pagination} from "swiper"
 
 import { SwiperLabel } from './Label'
+import { SwiperItem } from './SwiperItem'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
-import { SwiperItem } from './SwiperItem'
+import "swiper/css/pagination"
 
 interface HomeSwiperProps {
     props: {
         continents: string[],
         exerts: string[],
-        urls: string[]
+        urls: string[],
+        ids: string[]
     }
 }
 
-export const HomeSwiper: React.FC<HomeSwiperProps> = ({props}) => {
+SwiperCore.use([Pagination]);
 
-    console.log(props)
+export const HomeSwiper: React.FC<HomeSwiperProps> = ({props}) => {
 
     return (
         <>
@@ -34,15 +36,20 @@ export const HomeSwiper: React.FC<HomeSwiperProps> = ({props}) => {
 
             <Swiper
                 modules={[Navigation]}
+                pagination={true}
                 navigation
                 centeredSlides
             >
-                
                 {props.continents.map((continent, index) => (
+
                     <SwiperSlide key={continent}>
-                        <SwiperItem url={`/${props.urls[index]}`} exert={props.exerts[index]} > 
-                            {continent}
-                        </SwiperItem>
+
+                        <Link href={`/continents/${props.ids[index]}`}>
+                            <SwiperItem url={`/contries/${props.urls[index]}`} exert={props.exerts[index]} > 
+                                {continent}
+                            </SwiperItem>
+                        </Link>
+
                     </SwiperSlide>
                 ))}
             </Swiper>   
