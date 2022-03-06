@@ -4,7 +4,8 @@
     "exerts": ["O continente mais antigo.", "O maior continente", "O continente com maior potêncial", "O menor continente", "O subcontinente mais rico", "O subcontinente mais bonito"],
     "urls": ["europe.jpg", "asia.jpg", "africa.jpg", "oceania.jpg", "north.jpg", "south.jpg"],
     "europe": {
-        "name": "Europa",
+        "country_name": "Europa",
+        "country_code": "europe",
         "cities": [
             {"city_name": "paris", "country": "França", "url": "paris.jpg"},
             {"city_name": "london", "country": "Reino unido", "url": "london.jpg"},
