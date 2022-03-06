@@ -7,15 +7,10 @@ type InfoProps = {
 
 export const Info: NextPage<InfoProps> = ({exert, children}) => {
     return (
-        <Flex w={["100%", "100%", "100%", "1160px"]} margin="auto" justify="center">
-
-          <Flex flexWrap={["wrap", "nowrap"]} gap={["0", "8"]} m="4" mt="6">
-            <Text align="justify" w={["100%", "600px"]} fontSize={["sm", "lg"]}>{exert}</Text>
-
-            
-            {children}
-
-          </Flex>
+        <Flex w={["100%", "100%", "100%", "1160px"]} flexWrap={["wrap", "nowrap"]} marginY="12" px={["4", "0"]} marginX="auto" justify="space-between">
+          <Text align="justify" w={["100%", "600px"]} fontSize={["sm", "lg"]}>{exert}</Text>
+          
+          {children}
 
         </Flex>
     )

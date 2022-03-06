@@ -33,7 +33,10 @@ interface ContinentPageProps {
 //max-width 1160px
 
 const ContinentPage: NextPage<ContinentPageProps> = ({data, id}) => {
-
+  
+  function capitalizeFirstLetter(value: string) {
+    return value.charAt(0).toUpperCase() + value.slice(1);
+  }
 
   return (
     <>
@@ -53,7 +56,7 @@ const ContinentPage: NextPage<ContinentPageProps> = ({data, id}) => {
         {/* Continent's content */}
         <Info exert={data.info?.exert}>
 
-          <HStack align={["flex-end", "center"]} justify="space-between" w={["100%", "400px"]}>
+          <HStack align={["flex-end", "center"]} justify={["space-between", "space-around"]} w={["100%", "400px"]}>
             <InfoBox information={data.info?.country_number}>países</InfoBox>
             <InfoBox information={data.info?.languagues}>línguas</InfoBox>
             <InfoBox information={data.info?.plus_100}>cidades +100</InfoBox>
@@ -61,10 +64,10 @@ const ContinentPage: NextPage<ContinentPageProps> = ({data, id}) => {
           
         </Info>
 
-        <Box>
-          <Text mb="6">Cidades +100</Text>
+        <Box w={["100%", "1160px"]} px={["4", "0"]} m="auto">
+          <Text fontSize="3xl" fontWeight="medium" mb="6">Cidades +100</Text>
 
-          <Flex flexDirection={"column"} align="center" gap="4">
+          <Flex flexDirection={"row"} flexWrap={["wrap"]} justify={["center", "flex-start"]} align="center" gap="8">
             {data.cities.map((city) => (
             
               <Box key={city.city_name} w="250px">
@@ -72,8 +75,8 @@ const ContinentPage: NextPage<ContinentPageProps> = ({data, id}) => {
                 
                 <Box borderTopWidth="1" border="1px solid" borderColor="brand.500" background="white" p="4">
                   <Flex flexDirection="column">
-                    <Text> {city.city_name} </Text>
-                    <Text color="gray.700"> {city.country} </Text>
+                    <Text fontWeight="semibold" fontSize="xl" > {capitalizeFirstLetter(city.city_name)} </Text>
+                    <Text color="gray.400"> {city.country} </Text>
                   </Flex>
                   <Image></Image>
                 </Box>
